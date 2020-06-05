@@ -14,26 +14,25 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# CLI 
-
 # OhMyZsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c '$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'
 
-# Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Homebrew Installation
+/usr/bin/ruby -e '$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)'
 
-# Tools
+# Homebrews
 brew install zsh
 brew install nvm
 
-# Configs
+# Homebrew Configs
 mkdir ~/.nvm
 
-# Homebrew App
+# Homebrew Casks
 brew cask install shiftit
-brew cask install spotify
 brew cask install vlc
 brew cask install google-chrome
 brew cask install google-backup-and-sync
+brew cask install marshallofsound-google-play-music-player
 brew cask install webtorrent
-brew cask install sublime-text
+brew cask install homebrew/cask-drivers/sony-ps4-remote-play
+brew cask install openemu
