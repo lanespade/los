@@ -1,15 +1,19 @@
-#! /bin/bash
+#!/bin/bash
 set -Eeuo pipefail
 
-# Install
+echo "Installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-# Brews
+echo "Installing brews"
 brew install nvm
 brew install fzf
 brew install ripgrep
 
-# Casks
+echo "Configuring nvm"
+mkdir -p ~/.nvm
+cp -f $(dirname $0)/.nvmrc ~/.nvmrc
+
+echo "Installing casks"
 brew cask install shiftit
 brew cask install vlc
 brew cask install google-chrome
