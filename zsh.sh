@@ -6,12 +6,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 THEME=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
-if test -f "$THEME"; then
-	echo "Installing theme"
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
-else
+if test -d "$THEME"; then
 	echo "Updating theme"
 	git -C $THEME pull
+else
+	echo "Installing theme"
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $THEME
 fi
 
 echo "Copying .zshrc"
@@ -20,4 +20,4 @@ cp -f $(dirname $0)/.zshrc ~/.zshrc
 echo "Copying .p10k.zsh"
 cp -f $(dirname $0)/.p10k.zsh ~/.p10k.zsh
 
-echo "Source ~/.zshrc"
+echo "source .zshrc"

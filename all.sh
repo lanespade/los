@@ -7,8 +7,11 @@ sh osx.sh
 echo "==== Homebrew ===="
 sh brew.sh
 
-echo "==== ZSH ===="
+echo "==== zsh ===="
 sh zsh.sh
 
-echo "==== VIM ===="
+echo "==== nvm ===="
+sh nvm.sh
+
+echo "==== vim ===="
 sh vim.sh

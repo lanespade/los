@@ -5,13 +5,8 @@ echo "Installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "Installing brews"
-brew install nvm
 brew install fzf
 brew install ripgrep
-
-echo "Configuring nvm"
-mkdir -p ~/.nvm
-cp -f $(dirname $0)/.nvmrc ~/.nvmrc
 
 echo "Installing casks"
 brew cask install shiftit
