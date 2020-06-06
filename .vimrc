@@ -1,17 +1,12 @@
-" Source System Defaults
+" System Defaults
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 let skip_defaults_vim=1
 
-" Basics
+" Basic Defaults
 set nu
 set hls
-
-" Fuzzy Search
-set path+=**
-set wildmenu
-set wildignore+=**/node_modules/**
-set wildignore+=**/__*/**
+set tabstop=4
 
 " Plugin Manager
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -30,6 +25,9 @@ call plug#end()
 let g:ale_fixers = {}
 let g:ale_fixers['*'] = ['remove_trailing_lines', 'trim_whitespace']
 let g:ale_fixers.javascript = ['prettier', 'eslint']
+let g:ale_fixers.json = ['prettier']
 
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
+
+set rtp+=/usr/local/opt/fzf
