@@ -112,7 +112,13 @@ export NVM_DIR="$HOME/.nvm"
 	[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 	[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-export FZF_DEFAULT_COMMAND='fd --type f . $HOME --hidden --follow'
+project_or_home_dir() {
+	git rev-parse --show-toplevel 2> /dev/null || echo $HOME
+}
+
+export FZF_ALT_C_COMMAND='fd --type d . $HOME'
+export FZF_DEFAULT_COMMAND="fd --type f . $(project_or_home_dir)"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND='fd --type d . $HOME --hidden --follow'
-export FZF_CTRL_T_OPTS="--height 100% --multi --reverse --info inline --preview 'bat --color always --style numbers,changes --line-range 1: {}'"
+export FZF_DEFAULT_OPTS="--layout reverse --height 100% --info inline"
+export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --multi --preview 'bat --color always --style numbers,changes --line-range 1: {}'"
