@@ -119,6 +119,18 @@ project_or_home_dir() {
 export FZF_ALT_C_COMMAND='fd --type d . $HOME'
 export FZF_DEFAULT_COMMAND="fd --type f . $(project_or_home_dir)"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+function chpwd() {
+    export FZF_DEFAULT_COMMAND="fd --type f . $(project_or_home_dir)"
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+}
+
 export FZF_DEFAULT_OPTS="--layout reverse --height 100% --info inline"
 export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS"
 export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --multi --preview 'bat --color always --style numbers,changes --line-range 1: {}'"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/l/d/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/l/d/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/l/d/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/l/d/google-cloud-sdk/completion.zsh.inc'; fi
