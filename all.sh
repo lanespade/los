@@ -1,17 +1,17 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-echo "==== OSX ===="
-sh osx.sh
+echo '==== macOS ===='
+sh macOS.sh
 
-echo "==== Homebrew ===="
+echo '==== Homebrew ===='
 sh brew.sh
 
-echo "==== zsh ===="
+echo '==== zsh ===='
 sh zsh.sh
 
-echo "==== nvm ===="
+echo '==== nvm ===='
 sh nvm.sh
 
-echo "==== vim ===="
+echo '==== vim ===='
 sh vim.sh
