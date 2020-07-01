@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 set -Eeuo pipefail
 
 echo 'Deleting dock items'

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 set -Eeuo pipefail
 
 echo 'Installing homebrew'
