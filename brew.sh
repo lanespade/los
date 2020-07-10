@@ -13,7 +13,6 @@ brew reinstall bat
 echo 'Installing casks'
 brew cask reinstall shiftit
 brew cask reinstall vlc
-brew cask reinstall google-chrome
 brew cask reinstall google-backup-and-sync
 brew cask reinstall webtorrent
 brew cask reinstall homebrew/cask-drivers/sony-ps4-remote-play
