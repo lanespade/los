@@ -16,5 +16,8 @@ sh zsh.sh
 echo '==== nvm ===='
 sh nvm.sh
 
+echo '==== npm ===='
+sh npm.sh
+
 echo '==== vim ===='
 sh vim.sh

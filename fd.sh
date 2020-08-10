@@ -1,5 +1,5 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-echo 'Copying .fdignore'
-cp -f $(dirname $0)/.fdignore $HOME
+echo 'Copying .ignore'
+cp -f $(dirname $0)/.ignore $HOME
