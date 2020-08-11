@@ -16,33 +16,34 @@ export FZF_ALT_C_COMMAND="fd --type d . $HOME"
 export FZF_ALT_C_OPTS="$FZF_PREVIEW_DEFAULTS --preview 'tree -C {}'"
 
 export FZF_DEFAULT_COMMAND="fd --type f . $HOME"
-export FZF_DEFAULT_OPTS="--layout default --info inline"
+export FZF_DEFAULT_OPTS="--layout default --info inline -m"
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--no-height -m $FZF_PREVIEW_DEFAULTS --preview 'bat --color always --style full --line-range 1: {}'"
+export FZF_CTRL_T_OPTS="--no-height $FZF_PREVIEW_DEFAULTS --preview 'bat --color always --style full --line-range 1: {}'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# FZF Completion
+source <(curl -sSL https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/zsh/fzf-zsh-completion.sh)
+zstyle ':completion:*' fzf-search-display true # Allow searching display strings as well
 
 # Interactive Git (via FZF)
 source <(curl -sSL https://raw.githubusercontent.com/wfxr/forgit/master/forgit.plugin.zsh)
 
-# Interactive Aliases
-# alias ga='interactive git add selector'
-# alias gcf='interactive git checkout <file>'
-# alias gclean='interactive git clean selector'
-# alias gd='interactive git diff viewer'
-# alias gi='interactive .gitignore generator'
-# alias glo='interactive git log viewer'
-# alias grh='interactive git reset HEAD <file>'
-# alias gss='interactive git stash viewer'
-
-# Standard Aliases
+# Aliases
+alias ga=forgit::add
+alias gc='git commit -m'
+alias gcl=forgit::clean
 alias gcm='git checkout master'
 alias gco='git checkout'
-alias gc='git commit -m'
+alias gd=forgit::diff
 alias gl='git pull'
+alias glg=forgit::log
 alias gp='git push'
+alias gr=forgit::restore
 alias grbm='git rebase master'
+alias grh=forgit::reset::head
+alias gss=forgit::stash::show
 alias gst='git status'
 alias l='ls -lAhG'
 
@@ -64,3 +65,21 @@ find-in-files() {
 
 zle -N find-in-files
 bindkey '^f' find-in-files
+
+# Ctrl-X (Kill Process)
+fkill() {
+    local pid 
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi  
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi  
+}
+
+zle -N fkill
+bindkey '^x' fkill
