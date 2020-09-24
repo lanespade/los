@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -Eeuo pipefail
+set -Eeuxo pipefail
 
 echo '==== macOS ===='
 sh macOS.sh

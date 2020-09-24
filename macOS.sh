@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -Eeuo pipefail
+set -Eeuxo pipefail
 
 echo 'Deleting dock items'
 defaults delete com.apple.dock persistent-apps; killall Dock
