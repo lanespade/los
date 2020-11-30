@@ -12,3 +12,4 @@ brew cask reinstall webtorrent
 brew cask reinstall homebrew/cask-drivers/sony-ps4-remote-play
 brew cask reinstall openemu
 brew cask reinstall expressvpn
+brew cask reinstall google-chrome
