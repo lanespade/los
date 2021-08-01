@@ -2,7 +2,7 @@
 set -Eeuxo pipefail
 
 echo '==== macOS ===='
-zsh macOS.sh
+zsh mac.zsh
 
 echo '==== Homebrew ===='
-zsh brew.sh
+zsh brew.zsh
