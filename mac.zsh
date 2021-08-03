@@ -1,12 +1,18 @@
 #!/bin/zsh
-set -Eeuxo pipefail
+set -Eeuo pipefail
 
 echo 'Configuring theme'
 defaults write -g AppleInterfaceStyle -string Dark
 
+echo 'Configuring background image'
+osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$PWD/background.jpg\""
+
+echo 'Configuring profile photo'
+sudo dscl . delete "/Users/$USER" JPEGPhoto
+sudo dscl . create "/Users/$USER" Picture "$PWD/avatar.jpg"
+
 echo 'Configuring dock'
-defaults delete com.apple.dock persistent-apps
-defaults delete com.apple.dock persistent-others
+defaults write com.apple.dock static-only -bool true
 defaults write com.apple.dock tilesize -int 128
 defaults write com.apple.dock autohide -int 1
 defaults write com.apple.dock show-recents -int 0
