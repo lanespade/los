@@ -22,8 +22,8 @@ This is only tested on the latest macOS
   * Disables natural scrolling
 
 ### [brew.zsh](https://github.com/lanespade/los/blob/master/brew.zsh)
-* Reinstalls homebrew
-* Reinstalls the following casks...
+* Installs homebrew
+* Installs the following casks...
 	* **[rectangle](https://formulae.brew.sh/cask/rectangle)**
 	* **[vlc](https://formulae.brew.sh/cask/vlc)**
 	* **[google-backup-and-sync](https://formulae.brew.sh/cask/google-backup-and-sync)**
@@ -38,4 +38,4 @@ This is only tested on the latest macOS
 1. `git clone https://github.com/lanespade/los.git`
 1. `cd los`
 1. `./install.zsh`
-1. Logout and log back in
+1. Logout and log back in and uncheck "Reopen windows when logging back in"
