@@ -16,11 +16,12 @@ echo 'Tapping casks'
 brew tap homebrew/cask-drivers
 
 echo 'Installing casks'
-brew install rectangle
-brew install vlc
-brew install google-backup-and-sync
-brew install webtorrent
-brew install homebrew/cask-drivers/sony-ps-remote-play
-brew install openemu
-brew install expressvpn
-brew install google-chrome
+brew reinstall rectangle
+brew reinstall vlc
+brew reinstall google-drive
+brew reinstall webtorrent
+brew reinstall homebrew/cask-drivers/sony-ps-remote-play
+brew reinstall openemu
+brew reinstall expressvpn
+brew reinstall google-chrome
+brew reinstall nordvpn
