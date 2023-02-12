@@ -20,8 +20,8 @@ brew reinstall rectangle
 brew reinstall vlc
 brew reinstall google-drive
 brew reinstall webtorrent
-brew reinstall homebrew/cask-drivers/sony-ps-remote-play
+brew reinstall sony-ps-remote-play
 brew reinstall openemu
-brew reinstall expressvpn
 brew reinstall google-chrome
 brew reinstall nordvpn
+brew reinstall nordpass
