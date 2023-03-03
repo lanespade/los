@@ -9,7 +9,7 @@ LINE='eval "$(/opt/homebrew/bin/brew shellenv)"'
 grep -xqF $LINE  ~/.zprofile || echo $LINE >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-echo 'Installing rosetta'
+echo 'Installing rosetta, required for sony-ps-remote-play'
 sudo softwareupdate --install-rosetta
 
 echo 'Tapping casks'
@@ -19,7 +19,7 @@ echo 'Installing casks'
 brew reinstall rectangle
 brew reinstall vlc
 brew reinstall google-drive
-brew reinstall webtorrent
+brew reinstall transmission
 brew reinstall sony-ps-remote-play
 brew reinstall openemu
 brew reinstall google-chrome
